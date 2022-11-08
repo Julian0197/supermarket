@@ -33,6 +33,10 @@ export default {
   mounted() {
     // 派发action获取floor组件的数据
     this.$store.dispatch("home/getFloorList");
+
+    // 获取用户信息在首页展示(在路由守卫中获取)
+    // this.$store.dispatch("user/userInfo")
+    // console.log(this.$store.state.user.token)
   },
   computed: {
     ...mapState('home', ['floorList'])

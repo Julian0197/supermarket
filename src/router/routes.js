@@ -30,7 +30,7 @@ export default [
     meta: { isHideFooter: false },
   },
   {
-    path: "/detail:skuid",
+    path: "/detail",
     component: Detail,
     meta: { isHideFooter: true },
   },

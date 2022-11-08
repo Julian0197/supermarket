@@ -41,12 +41,12 @@ const actions = {
     }
   },
 };
-const getter = {};
+const getters = {};
 
 export default {
   namespaced: true,
   state,
   mutations,
   actions,
-  getter,
+  getters,
 };

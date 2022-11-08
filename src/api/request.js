@@ -1,5 +1,6 @@
 // 对于axios的二次封装
-import axios from 'axios'
+import store from '@/store';
+import axios from 'axios';
 // 引入进度条
 import nprogress from 'nprogress'
 // 引入进度条样式
@@ -16,6 +17,12 @@ const requests = axios.create({
 // 请求拦截器：发送请求之前，可以监测，在请求发出去之前做一些事情
 requests.interceptors.request.use((config) => {
   // config：配置对象，对象里面有一个属性很重要，headers请求头
+
+  // 判断是否需要token给服务器
+  if (store.state.user.token) {
+    config.headers.token = store.state.user.token;
+
+  }
   nprogress.start();//进度条开始
   return config
 })
